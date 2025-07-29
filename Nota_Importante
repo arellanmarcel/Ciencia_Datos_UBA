@@ -1,0 +1,44 @@
+#Nota importante sobre la base de datos
+
+#Como la base es muy grande, se utilizó una base más corta, filtrando los datos que se usarían, para tener una base menos pesada
+#Nosotros les hemos compartido la base ya filtrada (datos_trabajofinal_datos.RData). Sin embargo, si desean descargar la base original
+#Pueden entrar a:
+
+#https://proyectos.inei.gob.pe/microdatos/ --> "Consulta por encuestas" 
+# --> Enaho Metodología ACTUALIZADA --> Condiciones de vida y pobreza - ENAHO PANEL --> Año 2022
+# --> 2018 Anual - 2022 Anual ---> Módulo Empleo e Ingresos
+
+Luego, deberán correr el siguiente codigo para llegar a la base final que les compartimos
+
+# 
+# Importar base de datos
+#modulo_empleo <- read_dta("enaho01a-2018-2022-500-panel.dta")
+
+# Lista de variables deseadas (solo se usarán algunas de las escogidas, se hizo para no tener una base tan pesada incialmente)
+#vars_deseadas <- c(
+#  "numper", "numpanh_18", "numpanh_19", "numpanh_20", "numpanh_21", "numpanh_22",
+#  "conglome", "p201pcor", "p207_18", "p207_19", "p207_20", "p207_21", "p207_22",
+#  
+# "perpanel1819", "perpanel1820", "perpanel1820s", "perpanel1821", "perpanel1821s", "perpanel1822", 
+# "perpanel1822s", "perpanel1920", "perpanel1921", "perpanel1921s", 
+# "perpanel1922","perpanel1922s", "perpanel2021", "perpanel2022",
+# "perpanel2122",
+# 
+# "facpob07_18", "facpob07_19","facpob07_20","facpob07_21","facpob07_22","facpanel1819","facpanel1820",
+# "facpanel1821","facpanel1822","facpanel1920","facpanel1921","facpanel1922","facpanel2021","facpanel2022",
+# "facpanel2122","fac500a_18","fac500a_19","fac500a_20","fac500a_21","fac500a_22",
+# 
+# "p506_18","p506_19","p506_20","p506_21","p506_22","p506r4_18","p506r4_19","p506r4_20","p506r4_21","p506r4_22",
+# 
+# "ocu500_18", "ocu500_19", "ocu500_20", "ocu500_21", "ocu500_22",
+# "ocupinf_18", "ocupinf_19", "ocupinf_20", "ocupinf_21", "ocupinf_22","perpanel1822"
+#)
+
+#Filtro estas variables en una nueva base
+#empleo_filtrado <- modulo_empleo %>%
+#  select(all_of(vars_deseadas))
+
+
+# Este base es la filtrada, que no pesa mucho porque considera solo la información relevante para el analisis
+
+load("datos_trabajofinal_datos.RData") 
